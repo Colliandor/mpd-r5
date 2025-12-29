@@ -137,16 +137,3 @@ EHDS Medication Prescription model allows multiple items prescribed on one presc
 |EHDSMedicationDispense.dosageInstructions|MedicationDispense.dosageInstruction|MedicationDispense.dosageInstruction|  
 |EHDSMedicationDispense.comment|MedicationDispense.note|MedicationDispense.note|   
 {:.table-bordered .table-striped .thead-light}
-
-#### Dispense Decline  
-
-|**Logical model element**|**FHIR Path R5**|**FHIR Path R4**|  
-|EHDSDispenseDecline.header.identifier|MedicationDispense.identifier|MedicationDispense.identifier|  
-|EHDSDispenseDecline.header.subject|MedicationDispense.subject|MedicationDispense.subject|  
-|EHDSDispenseDecline.header.status|MedicationDispense.status|MedicationDispense.status|  
-|EHDSDispenseDecline.header.statusReason[x]|MedicationDispense.notPerformedReason|MedicationDispense.statusReason|  
-|EHDSDispenseDecline.header.authorship.author|MedicationDispense.performer.actor|MedicationDispense.performer.actor|  
-|EHDSDispenseDecline.header.authorship.datetime|MedicationDispense.whenHandedOver or .recorded|MedicationDispense.whenHandedOver|  
-|EHDSDispenseDecline.relatedRequest|MedicationDispense.authorizingPrescription|MedicationDispense.authorizingPrescription|  
-|EHDSDispenseDecline.comment|MedicationDispense.note|MedicationDispense.note|   
-{:.table-bordered .table-striped .thead-light}
