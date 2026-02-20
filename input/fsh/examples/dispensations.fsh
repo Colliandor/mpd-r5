@@ -29,6 +29,7 @@ Description: "400D-2. Medication dispense fulfilling the second part of the orde
 * quantity = 3 $ucum#1 // 3 packs containing 5 vials each
 * daysSupply = 4 $ucum#d "day(s)"
 * whenHandedOver = "2024-12-09T10:55:00Z"
+* substitution.wasSubstituted = true
 
 Instance: 300D-dispense-for-2-requests
 InstanceOf: MedicationDispenseEuMpd

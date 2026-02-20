@@ -30,6 +30,8 @@ Description: "This profile defines how to represent MedicationRequest in HL7 FHI
   * extension contains $ihe-ext-medicationrequest-prescribedquantity named prescribedQuantity 0..1
   * extension[prescribedQuantity] ^short = "Overall amount of product prescribed, independent from the number of repeats."
   * extension[prescribedQuantity] ^definition = "When Medication resource implies a pack size, prescribedQuantity should convey number of packages. When the Medication does not imply an amount, overall amount could be in tablets or millilitres."
+* substitution ^short = "Any restrictions on medication substitution. Substitution rules (including the definition of substitution) vary across different countries, and the semantics of this element should be interpreted accordingly."
+
 
 
 
