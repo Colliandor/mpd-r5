@@ -1,3 +1,6 @@
+Alias: $obligation = http://hl7.org/fhir/StructureDefinition/obligation
+Alias: $actor-producer = https://www.xt-ehr.eu/specifications/fhir/actor-producer
+
 Profile: MedicationDispenseEuMpd
 Parent: MedicationDispense 
 Id: MedicationDispense-eu-mpd
@@ -8,6 +11,8 @@ Description: "MedicationDispense profile for capturing dispensation information 
 
 * identifier // MS // identifier
 * subject // MS // patient 1
+  * ^extension[$obligation][+].extension[code].valueCode = #SHALL:able-to-populate
+  * ^extension[$obligation][=].extension[actor].valueCanonical = $actor-producer
 * receiver // MS // receiver
 * performer.actor 1..1 // MS // dispenser 1
 * authorizingPrescription // MS // relatedRequest
