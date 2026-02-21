@@ -1,3 +1,5 @@
+// TODO: whenHandedOver is 1..1 in IHE profile, which is imposed on R5. Causes QA error.
+
 Alias: $obligation = http://hl7.org/fhir/StructureDefinition/obligation
 Alias: $actor-producer = https://www.xt-ehr.eu/specifications/fhir/actor-producer
 
@@ -35,7 +37,7 @@ Description: "MedicationDispense profile for capturing dispensation information 
 * quantity 1..1 // MS // dispensedQuantity 1
   * ^extension[$obligation][+].extension[code].valueCode = #SHALL:able-to-populate
   * ^extension[$obligation][=].extension[actor].valueCanonical = $actor-producer 
-* whenHandedOver 1..1 // MS // timeOfDispensation 1
+* whenHandedOver ^short = "Date and time when the medication was handed over. When not present, the time of dispensation is assumed to be the time of issuing the dispense record." // MS // timeOfDispensation 1
 * substitution.wasSubstituted // MS // substitutionOccurred
 * status // MS // status 1
   * ^extension[$obligation][+].extension[code].valueCode = #SHALL:able-to-populate
@@ -44,18 +46,13 @@ Description: "MedicationDispense profile for capturing dispensation information 
   * ^extension[$obligation][+].extension[code].valueCode = #SHOULD:able-to-populate
   * ^extension[$obligation][=].extension[actor].valueCanonical = $actor-producer 
 
+//R4* extension contains $medicationDispense-recorded-r5 named recorded 1..1
+//R4* extension[recorded] ^short = "Date and time when the dispense was recorded/issued. This is not necessarily the same as when the medication was handed over to the patient."
+* recorded ^short = "Date and time when the dispense was recorded/issued. This is not necessarily the same as when the medication was handed over to the patient."
+* recorded 1..1
 
 * medication only CodeableReference(MedicationEuMpd)
 //R4* medicationReference only Reference(MedicationEuMpd)
-
-* medication.extension contains $data-absent-reason named medication-absent-reason 0..1
-//R4* medicationCodeableConcept.extension contains $data-absent-reason named medication-absent-reason 0..1
-
-* medication.extension[medication-absent-reason] ^short = "Reason for not providing the medication."
-//R4* medicationCodeableConcept.extension[medication-absent-reason] ^short = "Reason for not providing the medication."
-
-* medication.extension[medication-absent-reason] ^definition = "Reason for not providing the medication."
-//R4* medicationCodeableConcept.extension[medication-absent-reason] ^definition = "Reason for not providing the medication."
 
 //R4* extension contains $medicationdispense-rendereddosageinstruction-r5 named renderedDosageInstruction 0..1
 //R4* extension[renderedDosageInstruction] ^short = "Full representation of the dosage instructions"

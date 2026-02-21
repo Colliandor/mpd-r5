@@ -75,7 +75,7 @@ The map is available in HL7 Europe Base and Core FHIR IG
 |header.subject|MedicationDispense.subject|MedicationDispense.subject| 
 |header.identifier|MedicationDispense.identifier|MedicationDispense.identifier| 
 |header.author[x]|MedicationDispense.performer.actor|MedicationDispense.performer.actor| 
-|header.date|MedicationDispense.recorded|(extension)| 
+|header.date|MedicationDispense.recorded|MedicationDispense.extension:recorded| 
 |header.status|MedicationDispense.status|MedicationDispense.status| 
 |header.language|MedicationDispense.language|MedicationDispense.language| 
 |dispenseLocation|MedicationDispense.location|MedicationDispense.location| 

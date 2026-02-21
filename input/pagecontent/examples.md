@@ -23,9 +23,11 @@ These two approaches are not mutually exclusive - it is perfectly acceptable to 
 
 ### Prescription examples
 
-This implementation guide does not consider a prescription or dispense a HL7 FHIR document, but a transactional set of resources. There is no resource called "Prescription" in HL7 FHIR: a prescription may be implemented as a MedicationRequest, multiple MedicationRequests, or a combination of MedicationRequests and RequestOrchestration/RequestGroup. These resources may be exchanged in a Bundle. It is also allowed to use Composition for following the document-oriented approach, but it is not normative.
+This implementation guide does not consider a prescription or dispense a HL7 FHIR document, but a transactional set of resources. There is no resource called "Prescription" in HL7 FHIR: a prescription may be implemented as a MedicationRequest, multiple MedicationRequests, or a combination of MedicationRequests and RequestOrchestration/RequestGroup. These resources may be exchanged in a Bundle. It is also allowed to use Composition for following the document-oriented approach, but it is not normative.  
 
-Be aware, that MedicationRequest may sometimes be used as a request NOT to give/prescribe a certain medication to a patient, and MedicationDispense can be used for declining a dispense. Do-not-perform-requests are out of scope for this implementation guide, declining a dispense is presented in the examples.  
+Be aware, that MedicationRequest may sometimes be used as a request NOT to give/prescribe a certain medication to a patient, and MedicationDispense can be used for declining a dispense. Do-not-perform-requests are out of scope for this implementation guide, declining a dispense is only presented in the examples.  
+
+Implementations do not have to support multi-item prescriptions or dispense decline reports to be compliant with this implementation guide.    
 
 #### Single-line prescriptions
 - [**400C**](MedicationRequest-400C-prescription-cefuroxime-singleline.html) - single-line prescription, allowing multiple dispenses, uses 'actionable' tag, allows substitution. See corresponding dispense examples 400D-1 and 400D-2 to see the actual substitution.
