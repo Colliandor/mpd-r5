@@ -45,12 +45,12 @@ Description: "This profile defines how to represent Medication data on ePrescrip
 * ingredient
   * item only CodeableReference (Substance or MedicationEuMpd)
     * ^short = "Substance (Substance resource or concept from terminology) or a medicinal product (Medication resource or concept from terminology). Medicinal product can be an ingredient in case of extemporal medications or combination packs (e.g Creme + 6 tablets)" 
+    * ^extension[$obligation][+].extension[code].valueCode = #SHOULD:able-to-populate
+    * ^extension[$obligation][=].extension[actor].valueCanonical = $actor-producer
   * item from $substanceSCT (example)
     * ^binding.additional.purpose = #candidate
     * ^binding.additional.valueSet = $eHDSISubstance
     * ^binding.additional.documentation = """MyHealth@EU crossborder value set for substances. Based on EMA SPOR SMS.""" 
-    * ^extension[$obligation][+].extension[code].valueCode = #SHOULD:able-to-populate
-    * ^extension[$obligation][=].extension[actor].valueCanonical = $actor-producer
 
   * strength[x] ^short = "Amount of substance in product (presentation or concentration strength)"
   * strength[x] ^definition = """Definitional resources should be used for specifying the different types of strengths: presentation; concentration."""
@@ -59,6 +59,8 @@ Description: "This profile defines how to represent Medication data on ePrescrip
     * extension[basisOfStrengthSubstance] ^short = "Basis of strength substance - substance for which the strength is provided (this could be different from the precise active ingredient)."
     * ^extension[$obligation][+].extension[code].valueCode = #SHOULD:able-to-populate
     * ^extension[$obligation][=].extension[actor].valueCanonical = $actor-producer
+
+
 * doseForm
   * ^short = "Dose form. For a branded product, this would most likely be authorised dose form, but it could also be administrable dose form. For package items, it could be item's individual dose form." // doseForm
   * ^binding.additional.purpose = #candidate
