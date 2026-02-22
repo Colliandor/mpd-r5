@@ -31,6 +31,8 @@ Description: "This profile defines how to represent Medication data on ePrescrip
   * ^extension[$obligation][=].extension[actor].valueCanonical = $actor-producer
 * code 
   * ^short = "A terminology-based code for the product (e.g. SNOMED CT code)"
+  * ^extension[$obligation][+].extension[code].valueCode = #SHALL:able-to-populate
+  * ^extension[$obligation][=].extension[actor].valueCanonical = $actor-producer
 * ingredient
   * ^short = "Ingredient or a part product. For combination packs, each ingredient can be a separate manufactured item with its own ingredients, dose form, and strength" // item
   * isActive
