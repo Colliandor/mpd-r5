@@ -18,7 +18,7 @@ publisher:
   url: http://hl7.eu
   # email: test@example.org
 copyright: >-
-  Used by permission of HL7 Europe, all rights reserved Creative Commons License
+  Copyright HL7 Europe. Licensed under creative commons public domain (CC0 1.0).
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
 # package id and the value is the version (or dev/current). For advanced
@@ -70,6 +70,8 @@ pages:
     title: Dependencies
   designchoices.md:
     title: Design Choices
+  dosagepatterns.md:
+    title: Dosage Patterns
   examples.md:
     title: Examples
   implementationnotes.md:
@@ -88,6 +90,8 @@ pages:
     title: Scope and Content
   terminology.md:
     title: Terminology Considerations
+  transactions.md:
+    title: IHE Transactions
   usecases.md:
     title: Use Cases
 #
@@ -131,12 +135,14 @@ menu:
     Use cases: usecases.html
     Logical Models: logicalmodels.html
 #   Workflow 
+    Dosage Patterns: dosagepatterns.html
     Terminology Considerations: terminology.html
     Medication Concepts: medicationconcepts.html
   Implementation:
     Mapping to Profiles: profiles.html
     Examples: examples.html
     Implementation Notes: implementationnotes.html
+    Transactions: transactions.html
     IHE MPD IG: https://profiles.ihe.net/PHARM/MPD/ 
   About:
     Authors and Contributors: authors.html
